@@ -1,37 +1,33 @@
 import React, { Component } from 'react';
-import fire from './fire';
 
 import FramePicker from './FramePicker.js';
 import ColorPicker from './ColorPicker.js';
 import MeublePicker from './MeublePicker.js';
 import DispoPicker from './DispoPicker.js';
-import Collection from './Collection.js';
 import Shield from './Shield.js';
+import RandomShield from './RandomShield.js';
 
 // App component - represents the whole app
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.state = Shield.getRandomShield();
+    this.state = RandomShield();
     this.pick = this.pick.bind(this);
-    this.storeShield = this.storeShield.bind(this);
+    this.onSave = this.onSave.bind(this);
   }
 
   pick(attribute, value) {
     this.setState({[attribute]: value});
   }
 
-  storeShield(event) {
+  onSave(event) {
     event.preventDefault(); // <- prevent form submit from reloading the page
-    fire.database().ref('/shields').push( this.state);
+    this.props.save(this.state);
   }
 
   render() {
     return (
-      <div className='wrapper'>
-        <div className='box header'>
-          <h1>Blason Your Character</h1>
-        </div>
+      <div className='builder'>
         <div className='box shield'>
             <Shield
               shieldColor={this.state.shieldColor}
@@ -47,7 +43,7 @@ export default class App extends Component {
             />
         </div>
 
-        <div className='box line'>
+        <div className='box'>
           Shield Color
           <ColorPicker
             selected={this.state.shieldColor}
@@ -71,15 +67,15 @@ export default class App extends Component {
             action={this.pick}
             attribute='dispo'
           />
-          Add this shield to collection
+          <p>Add this shield to collection</p>
           <button
-            onClick={this.storeShield}
-            className='save'
+            onClick={this.onSave}
+            className='saveButton'
           >
-            Add
+            Save
           </button>
         </div>
-        <div className='box line2'>
+        <div className='box'>
           First Meuble
           <MeublePicker
             selected={this.state.first}
@@ -113,9 +109,6 @@ export default class App extends Component {
             action={this.pick}
             attribute='thirdColor'
           />
-        </div>
-        <div className='collection'>
-          <Collection />
         </div>
       </div>
     );

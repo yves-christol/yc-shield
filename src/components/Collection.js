@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Shield from './Shield.js';
-import fire from './fire';
+import fire from '../fire';
 
 export default class Collection extends Component {
   constructor(props) {
@@ -20,10 +20,10 @@ export default class Collection extends Component {
 
   render() {
     return (
-      <div>
-      { /* Render the list of shields */
-        this.state.shields.map( (shield, idx) =>
-          <div key={idx} >
+      <div className="box" >
+        { /* Render the list of shields */
+          this.state.shields.map( (shield, idx) =>
+            <button className="collectionButton" key={idx} >
               <Shield
                 shieldColor={shield.value.shieldColor}
                 frame={shield.value.frame}
@@ -36,10 +36,9 @@ export default class Collection extends Component {
                 third={shield.value.third}
                 thirdColor={shield.value.thirdColor}
               />
-          </div>
-                              )
-      }
-    </div>
+            </button> )
+        }
+      </div>
     );
   }
 }

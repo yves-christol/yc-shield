@@ -1,0 +1,59 @@
+.app {
+  background: #DDD;
+  color: #444;
+}
+
+.builder {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 33% 33% 1fr;
+  grid-template-rows: repeat(3 90px);
+  background: #BBB;
+  color: #444;
+}
+
+.box {
+  background-color: transparent;
+  color: #FFF;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+}
+
+.shield {
+  grid-column: 1;
+  grid-row: 1 / span 3;
+}
+
+/* button for all pickers */
+.shieldButton {
+  width: 60px;
+  height: 60px;
+}
+
+.shieldButtonSelected {
+  width: 60px;
+  height: 60px;
+  background: #999;
+}
+
+.saveButton {
+  width: 90px;
+  height: 60px;
+  color: #000;
+  background: #999;
+}
+
+.collection {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(10 10%);
+  background: #BBB;
+  color: #444;
+}
+
+.collectionButton {
+  width: 120px;
+  height: 120px;
+  background: transparent;
+}
