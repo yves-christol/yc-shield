@@ -1,0 +1,5 @@
+rm build/static/*
+rmdir build/static
+rm build/*
+npm run build
+npm run deploy

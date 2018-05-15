@@ -5,9 +5,9 @@ import Shield from './Shield.js';
 import { getFrames } from './shield/frames.js';
 
 const Frame =(props) => (
-  <button
+  <span
     onClick={() => props.onClick(props.frame)}
-    className={props.selected ? 'shieldButtonSelected' : 'shieldButton'}
+    className={props.selected ? 'shieldSelected' : 'shield'}
     >
       <Shield
         shieldColor='argent'
@@ -21,7 +21,7 @@ const Frame =(props) => (
         third='none'
         thirdColor='sable'
       />
-  </button>
+  </span>
 );
 
 export default class FramePicker extends Picker {

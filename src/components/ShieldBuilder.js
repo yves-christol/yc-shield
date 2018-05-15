@@ -27,8 +27,8 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className='builder'>
-        <div className='box shield'>
+      <div className='row'>
+        <div className='four columns'>
             <Shield
               shieldColor={this.state.shieldColor}
               frame={this.state.frame}
@@ -41,9 +41,16 @@ export default class App extends Component {
               third={this.state.third}
               thirdColor={this.state.thirdColor}
             />
+            <button
+              onClick={this.onSave}
+              className='button-primary'
+            >
+              Save
+            </button>
+            <p>(add this shield to collection)</p>
         </div>
 
-        <div className='box'>
+        <div className='four columns'>
           Shield Color
           <ColorPicker
             selected={this.state.shieldColor}
@@ -67,15 +74,8 @@ export default class App extends Component {
             action={this.pick}
             attribute='dispo'
           />
-          <p>Add this shield to collection</p>
-          <button
-            onClick={this.onSave}
-            className='saveButton'
-          >
-            Save
-          </button>
         </div>
-        <div className='box'>
+        <div className='four columns'>
           First Meuble
           <MeublePicker
             selected={this.state.first}

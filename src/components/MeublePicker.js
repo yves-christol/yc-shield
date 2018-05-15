@@ -5,9 +5,9 @@ import Shield from './Shield.js';
 import { getMeubles } from './shield/meubles.js';
 
 const Meuble = (props) => (
-  <button
+  <span
     onClick={() => props.onClick(props.meuble)}
-    className={props.selected ? 'shieldButtonSelected' : 'shieldButton'}
+    className={props.selected ? 'shieldSelected' : 'shield'}
     >
       <Shield
         shieldColor='argent'
@@ -21,7 +21,7 @@ const Meuble = (props) => (
         third='none'
         thirdColor='sable'
       />
-  </button>
+  </span>
 );
 
 export default class MeublePicker extends Picker {

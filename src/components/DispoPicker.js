@@ -5,9 +5,9 @@ import Shield from './Shield.js';
 import { getDispos } from './shield/dispos.js';
 
 const Dispo = (props) => (
-  <button
+  <span
     onClick={() => props.onClick(props.dispo)}
-    className={props.selected ? 'shieldButtonSelected' : 'shieldButton'}
+    className={props.selected ? 'shieldSelected' : 'shield'}
     >
       <Shield
         shieldColor='argent'
@@ -21,11 +21,11 @@ const Dispo = (props) => (
         third='rond'
         thirdColor='sable'
       />
-  </button>
+  </span>
 );
 
 export default class DispoPicker extends Picker {
-  
+
   renderOne(dis) {
     return (
       <Dispo

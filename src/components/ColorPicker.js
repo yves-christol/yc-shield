@@ -5,9 +5,9 @@ import Shield from './Shield.js';
 import { getColors } from './shield/colors.js';
 
 const Color = (props) => (
-  <button
+  <span
     onClick={() => props.onClick(props.color)}
-    className={props.selected ? 'shieldButtonSelected' : 'shieldButton'}
+    className={props.selected ? 'shieldSelected' : 'shield'}
     >
       <Shield
         shieldColor={props.color}
@@ -21,7 +21,7 @@ const Color = (props) => (
         third='none'
         thirdColor='none'
       />
-  </button>
+  </span>
 );
 
 export default class ColorPicker extends Picker {

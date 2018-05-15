@@ -18,27 +18,45 @@ export default class Collection extends Component {
     })
   }
 
+  //this function will separate each six shields to display
+  splitRows() {
+    let rows = [];
+    const shields = this.state.shields;
+
+    for(var i = 0; i < shields.length; i+=6) {
+         let oneRow = [];
+         oneRow.push(shields.slice(i, i+6).map( (shield, idx) => {
+           return   (
+             <div className="two columns" key={i + idx} >
+               <Shield
+                 shieldColor={shield.value.shieldColor}
+                 frame={shield.value.frame}
+                 frameColor={shield.value.frameColor}
+                 dispo={shield.value.dispo}
+                 first={shield.value.first}
+                 firstColor={shield.value.firstColor}
+                 second={shield.value.second}
+                 secondColor={shield.value.secondColor}
+                 third={shield.value.third}
+                 thirdColor={shield.value.thirdColor}
+               />
+             </div> )
+         }));
+         rows.push(oneRow.map(itm => {
+           return <div className="row" key={'r'+i}>{itm}</div>
+         }))
+    }
+    return rows;
+  }
+
   render() {
-    return (
-      <div className="box" >
-        { /* Render the list of shields */
-          this.state.shields.map( (shield, idx) =>
-            <button className="collectionButton" key={idx} >
-              <Shield
-                shieldColor={shield.value.shieldColor}
-                frame={shield.value.frame}
-                frameColor={shield.value.frameColor}
-                dispo={shield.value.dispo}
-                first={shield.value.first}
-                firstColor={shield.value.firstColor}
-                second={shield.value.second}
-                secondColor={shield.value.secondColor}
-                third={shield.value.third}
-                thirdColor={shield.value.thirdColor}
-              />
-            </button> )
-        }
-      </div>
-    );
+    return (<span>
+              <div className="row">
+                <div className="twelve columns">
+                  <h5> These are the last creations posted in the database</h5>
+                </div>
+              </div>
+              {this.splitRows()}
+            </span>);
   }
 }

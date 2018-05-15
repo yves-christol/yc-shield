@@ -24,16 +24,6 @@
 - Clearing
 - Media Queries
 */
-.shieldSelected,
-.shield {
-  display: inline-block;
-  width: 50px;
-  height: 55px;
-  background: transparent;
-}
-.shieldSelected {
-  border: 1px solid #bbb;
-}
 
 
 /* Grid
@@ -210,34 +200,28 @@ input[type="button"]:focus {
   color: #333;
   border-color: #888;
   outline: 0; }
-  .button.button:disabled,
-  button.button:disabled,
-  input[type="submit"].button:disabled,
-  input[type="reset"].button:disabled,
-  input[type="button"].button:disabled {
-    color: #BBB;
-    border-color: #EEE; }
 .button.button-primary,
 button.button-primary,
 input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary {
   color: #FFF;
-  background-color: #FD712A;
-  border-color: #FD712A; }
-  .button.button-primary:hover,
-  button.button-primary:hover,
-  input[type="submit"].button-primary:hover,
-  input[type="reset"].button-primary:hover,
-  input[type="button"].button-primary:hover,
-  .button.button-primary:focus,
-  button.button-primary:focus,
-  input[type="submit"].button-primary:focus,
-  input[type="reset"].button-primary:focus,
-  input[type="button"].button-primary:focus {
-    color: #FFF;
-    background-color: #CD5B22;
-    border-color: #CD5B22; }
+  background-color: #33C3F0;
+  border-color: #33C3F0; }
+.button.button-primary:hover,
+button.button-primary:hover,
+input[type="submit"].button-primary:hover,
+input[type="reset"].button-primary:hover,
+input[type="button"].button-primary:hover,
+.button.button-primary:focus,
+button.button-primary:focus,
+input[type="submit"].button-primary:focus,
+input[type="reset"].button-primary:focus,
+input[type="button"].button-primary:focus {
+  color: #FFF;
+  background-color: #1EAEDB;
+  border-color: #1EAEDB; }
+
 
 /* Forms
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
