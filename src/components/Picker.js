@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Overlay from './Overlay.js';
+
 // Generic Picker
 export default class Picker extends Component {
   constructor(props) {
@@ -35,7 +37,10 @@ export default class Picker extends Component {
     return (
       <div>
         {this.state.expanded ?
-          this.renderList() :
+          <section className="overlay" aria-hidden="true">
+            <Overlay />
+            {this.renderList()}
+          </section> :
           this.renderOne(this.props.selected)}
       </div>
     );

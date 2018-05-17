@@ -38,8 +38,10 @@ export default class FramePicker extends Picker {
   }
 
   renderList() {
-    return getFrames().map(
-      (frame, idx) => (this.renderOne(frame[0]))
+    return (
+      <span>
+        {getFrames().map((frame, idx) => (this.renderOne(frame[0])))}
+      </span>
     );
   }
 }

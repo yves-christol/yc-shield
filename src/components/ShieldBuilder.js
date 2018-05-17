@@ -28,7 +28,7 @@ export default class App extends Component {
   render() {
     return (
       <div className='row'>
-        <div className='four columns'>
+        <div className='six columns'>
             <Shield
               shieldColor={this.state.shieldColor}
               frame={this.state.frame}
@@ -50,7 +50,7 @@ export default class App extends Component {
             <p>(add this shield to collection)</p>
         </div>
 
-        <div className='four columns'>
+        <div className='three columns'>
           Shield Color
           <ColorPicker
             selected={this.state.shieldColor}
@@ -75,7 +75,7 @@ export default class App extends Component {
             attribute='dispo'
           />
         </div>
-        <div className='four columns'>
+        <div className='three columns'>
           First Meuble
           <MeublePicker
             selected={this.state.first}

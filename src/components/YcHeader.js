@@ -11,7 +11,7 @@ const YcHeader = (props) => (
       <h4>Emblazon yourself</h4>
     </div>
     <div className="two columns">
-      <Link to="/home" >
+      <Link to="/" >
         <button className="button" > About </button>
       </Link>
     </div>

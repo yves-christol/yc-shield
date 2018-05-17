@@ -13,7 +13,7 @@ import ShieldBuilder from './ShieldBuilder.js';
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { loading: true, authenticated: false, user: null };
+    this.state = { loading: true, authenticated: false, currentUser: null };
     this.saveShield = this.saveShield.bind(this);
   }
 
@@ -52,9 +52,8 @@ export default class App extends Component {
         <div className="container">
           <YcHeader authenticated={this.state.authenticated}/>
           <Route
-            exact path='/home'
-            component={Home}
-            user={this.state.currentUser}
+            exact path='/'
+            component={(props) => <Home user={this.state.currentUser}/>}
           />
           <Route
             exact path='/login'

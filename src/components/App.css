@@ -24,6 +24,33 @@
 - Clearing
 - Media Queries
 */
+/* My Stuff ycwh */
+
+/* to the body element */
+.noscroll { overflow: hidden; }
+
+.overlay {
+   position: fixed;
+   overflow-y: scroll;
+   padding: 30px;
+   margin: 10px;
+   top: 10px; right: 10px; bottom: 10px; left: 10px; }
+
+[aria-hidden="true"] { display: none; }
+[aria-hidden="false"] { display: block; }
+
+.overlay div {
+   margin: 15vh auto;
+   width: 80%;
+   max-width: 650px;
+   padding: 30px;
+   min-height: 200vh;
+   background: rgba(255,255,255, .95);
+}
+.overlay {
+    background:  rgba(40,40,40, .75);
+}
+
 .shieldSelected,
 .shield {
   display: inline-block;
@@ -34,7 +61,6 @@
 .shieldSelected {
   border: 1px solid #bbb;
 }
-
 
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
