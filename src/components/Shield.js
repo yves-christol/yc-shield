@@ -9,6 +9,14 @@ const shield = 'M -30,-30 h60 v26 C 30, 25 0, 36 0, 36 0,36 -30, 25 -30,-4z';
 // Shield component - represents a single svg shield
 const Shield = (props) => (
       <svg viewBox="-31 -31 62 68">
+        <defs>
+          <radialGradient id="grad" gradientUnits="userSpaceOnUse" cx="-8" cy="-8" r="40">
+            <stop stopColor='#fff' stopOpacity='0.31' offset='0%'/>
+            <stop stopColor='#fff' stopOpacity='0.25' offset='19%'/>
+            <stop stopColor='#6b6b6b' stopOpacity='0.12' offset='60%'/>
+            <stop stopColor='#000' stopOpacity='0.12' offset='100%'/>
+          </radialGradient>
+        </defs>
         <path d={shield} style={{fill: getColor(props.shieldColor), strokeWidth: '0'}} />
         <path d={getFrame(props.frame)}  style={{fill: getColor(props.frameColor)}} />
         <path d={getMeuble(props.first)}
@@ -28,7 +36,7 @@ const Shield = (props) => (
           /> : <path d='' />
         }
         < path d={shield}
-          style={{fill: 'transparent', stroke: '#000000', strokeWidth: '0.5'}}
+          style={{fill: 'url(#grad)', stroke: '#000', strokeWidth: '0.5'}}
         />
       </svg>
 );

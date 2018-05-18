@@ -39,6 +39,7 @@ export default class App extends Component {
     const user = this.state.currentUser;
     if (user) {
       shield.email = user.email;
+      shield.uid = user.uid;
       fire.database().ref('/shields').push( shield);
     }
   }
