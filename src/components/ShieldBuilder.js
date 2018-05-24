@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 
 import FramePicker from './FramePicker.js';
 import ColorPicker from './ColorPicker.js';
-import MeublePicker from './MeublePicker.js';
+import MeubleBuilder from './MeubleBuilder.js';
 import DispoPicker from './DispoPicker.js';
 import Shield from './Shield.js';
 import RandomShield from './RandomShield.js';
 
-// App component - represents the whole app
-export default class App extends Component {
+export default class ShieldBuilder extends Component {
   constructor(props) {
     super(props);
     this.state = RandomShield();
@@ -17,6 +16,7 @@ export default class App extends Component {
   }
 
   pick(attribute, value) {
+    console.log('tyty');
     this.setState({[attribute]: value});
   }
 
@@ -26,20 +26,18 @@ export default class App extends Component {
   }
 
   render() {
+    console.log('shieldcolor '+this.state.shieldColor);
+    console.log('meubles '+this.state.meubles.length);
+
     return (
       <div className='row'>
-        <div className='six columns'>
+        <div className='five columns'>
             <Shield
               shieldColor={this.state.shieldColor}
               frame={this.state.frame}
               frameColor={this.state.frameColor}
               dispo={this.state.dispo}
-              first={this.state.first}
-              firstColor={this.state.firstColor}
-              second={this.state.second}
-              secondColor={this.state.secondColor}
-              third={this.state.third}
-              thirdColor={this.state.thirdColor}
+              meubles={this.state.meubles}
             />
             <button
               onClick={this.onSave}
@@ -50,66 +48,34 @@ export default class App extends Component {
             <p>(add this shield to collection)</p>
         </div>
 
-        <div className='three columns'>
-          Shield Color
-          <ColorPicker
-            selected={this.state.shieldColor}
-            action={this.pick}
-            attribute='shieldColor'
-          />
-          Frame
-          <FramePicker
-            selected={this.state.frame}
-            action={this.pick}
-            attribute='frame'
-          />
-          <ColorPicker
-            selected={this.state.frameColor}
-            action={this.pick}
-            attribute='frameColor'
-          />
-          Dispo
-          <DispoPicker
-            selected={this.state.dispo}
-            action={this.pick}
-            attribute='dispo'
-          />
+        <div className='two columns'>
+          <div>
+            <p>Shield Color</p>
+            <ColorPicker
+              selected={this.state.shieldColor}
+              action={this.pick}
+              attribute='shieldColor'
+            />
+          </div>
+          <div>
+            <p>Frame</p>
+            <FramePicker
+              selected={this.state.frame}
+              action={this.pick}
+              attribute='frame'
+            />
+            <ColorPicker
+              selected={this.state.frameColor}
+              action={this.pick}
+              attribute='frameColor'
+            />
+          </div>
         </div>
-        <div className='three columns'>
-          First Meuble
-          <MeublePicker
-            selected={this.state.first}
-            action={this.pick}
-            attribute='first'
-          />
-          <ColorPicker
-            selected={this.state.firstColor}
-            action={this.pick}
-            attribute='firstColor'
-          />
-          Second Meuble
-          <MeublePicker
-            selected={this.state.second}
-            action={this.pick}
-            attribute='second'
-          />
-          <ColorPicker
-            selected={this.state.secondColor}
-            action={this.pick}
-            attribute='secondColor'
-          />
-          Third Meuble
-          <MeublePicker
-            selected={this.state.third}
-            action={this.pick}
-            attribute='third'
-          />
-          <ColorPicker
-            selected={this.state.thirdColor}
-            action={this.pick}
-            attribute='thirdColor'
-          />
-        </div>
+        <MeubleBuilder
+          meubles={this.state.meubles}
+          action={this.pick}
+          attribute='meubles'
+        />
       </div>
     );
   }

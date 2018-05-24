@@ -28,7 +28,11 @@ export function randomColorBut(name) {
 }
 
 export function getColor(name) {
-  return colMap.get(name).value;
+  const col = colMap.get(name);
+  if (! col) {
+    console.log(`Error: ${name} is not a known color`);
+  }
+  return col ? col.value : 'sable';
 }
 
 export function getColorComp(name) {

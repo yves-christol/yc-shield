@@ -13,13 +13,6 @@ const Color = (props) => (
         shieldColor={props.color}
         frame='none'
         frameColor='sable'
-        dispo='unique'
-        first='none'
-        firstColor='sable'
-        second='none'
-        secondColor='sable'
-        third='none'
-        thirdColor='none'
       />
   </span>
 );
@@ -32,7 +25,7 @@ export default class ColorPicker extends Picker {
         key={col}
         color={col}
         onClick={this.pick}
-        selected={col === this.props.selected}
+        selected={this.state.expanded && col === this.props.selected}
       />
     );
   }

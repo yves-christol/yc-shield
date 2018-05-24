@@ -1,0 +1,51 @@
+<svg viewBox="-31 -31 62 68">
+  <style>
+    path {
+      fill: none;
+      stroke: black;
+      stroke-width: 1;
+    }
+    circle {
+      fill: none;
+      stroke-width: 0.5;
+    }
+  </style>
+
+  <path d='M -30,-30 h60 v26 C 30, 25 0, 36 0, 36 0,36 -30, 25 -30,-4z'/>
+
+  <circle style="stroke: #AAA" cx="-22.5" cy="-22.5" r="7.5"/>
+  <circle style="stroke: #AAA" cx="-7.5" cy="-22.5" r="7.5"/>
+  <circle style="stroke: #AAA" cx="7.5" cy="-22.5" r="7.5"/>
+  <circle style="stroke: #AAA" cx="22.5" cy="-22.5" r="7.5"/>
+  <circle style="stroke: #AAA" cx="-22.5" cy="-7.5" r="7.5"/>
+  <circle style="stroke: #AAA" cx="-7.5" cy="-7.5" r="7.5"/>
+  <circle style="stroke: #AAA" cx="7.5" cy="-7.5" r="7.5"/>
+  <circle style="stroke: #AAA" cx="22.5" cy="-7.5" r="7.5"/>
+  <circle style="stroke: #AAA" cx="-18" cy="7.5" r="7.5"/>
+  <circle style="stroke: #AAA" cx="0" cy="7.5" r="7.5"/>
+  <circle style="stroke: #AAA" cx="18" cy="7.5" r="7.5"/>
+  <circle style="stroke: #AAA" cx="-7.5" cy="22.5" r="7.5"/>
+  <circle style="stroke: #AAA" cx="7.5" cy="22.5" r="7.5"/>
+  <circle style="stroke: #FF0" cx="0" cy="-22.5" r="7.5"/>
+  <circle style="stroke: #FF0" cx="0" cy="-7.5" r="7.5"/>
+  <circle style="stroke: #FF0" cx="0" cy="12" r="7.5"/>
+  <circle style="stroke: #FF0" cx="0" cy="27" r="7.5"/>
+
+  <circle style="stroke: #0F0" cx="-20" cy="-20" r="10"/>
+  <circle style="stroke: #0F0" cx="0" cy="-20" r="10"/>
+  <circle style="stroke: #0F0" cx="20" cy="-20" r="10"/>
+  <circle style="stroke: #0F0" cx="-20" cy="0" r="10"/>
+  <circle style="stroke: #0F0" cx="0" cy="0" r="10"/>
+  <circle style="stroke: #0F0" cx="20" cy="0" r="10"/>
+  <circle style="stroke: #0F0" cx="0" cy="20" r="10"/>
+
+  <circle style="stroke: #00F" cx="-15" cy="-15" r="15"/>
+  <circle style="stroke: #00F" cx="15" cy="-15" r="15"/>
+  <circle style="stroke: #00F" cx="0" cy="15" r="15"/>
+  <circle style="stroke: #F0F" cx="0" cy="0" r="15"/>
+  <circle style="stroke: #0FF" cx="0" cy="-15" r="15"/>
+
+
+  <circle style="stroke: #F00" cx="0" cy="0" r="28"/>
+
+</svg>

@@ -35,14 +35,14 @@ export default class Picker extends Component {
 
   render() {
     return (
-      <div>
+      <span>
         {this.state.expanded ?
           <section className="overlay" aria-hidden="true">
             <Overlay />
             {this.renderList()}
           </section> :
           this.renderOne(this.props.selected)}
-      </div>
+      </span>
     );
   }
 }

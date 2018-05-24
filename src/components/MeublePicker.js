@@ -4,6 +4,8 @@ import Picker from './Picker.js';
 import Shield from './Shield.js';
 import { getMeubles } from './shield/meubles.js';
 
+const m = (m) => ([{name: m, color: 'sable', dispo: 'r1'}]);
+
 const Meuble = (props) => (
   <span
     onClick={() => props.onClick(props.meuble)}
@@ -13,14 +15,9 @@ const Meuble = (props) => (
         shieldColor='argent'
         frame='none'
         frameColor='sable'
-        dispo='unique'
-        first={props.meuble}
-        firstColor='sable'
-        second='none'
-        secondColor='sable'
-        third='none'
-        thirdColor='sable'
-      />
+        dispo='r1'
+        meubles={m(props.meuble)}
+    />
   </span>
 );
 
@@ -32,7 +29,7 @@ export default class MeublePicker extends Picker {
         key={meu}
         meuble={meu}
         onClick={this.pick}
-        selected={meu === this.props.selected}
+        selected={this.state.expanded && meu === this.props.selected}
       />
     );
   }

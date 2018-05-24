@@ -2,7 +2,10 @@ import React from 'react';
 
 import Picker from './Picker.js';
 import Shield from './Shield.js';
-import { getDispos } from './shield/dispos.js';
+import {getLeftDispos} from './shield/dispos.js';
+
+
+const m = (d) => ([{name: 'rond', color: 'sable', dispo: d}]);
 
 const Dispo = (props) => (
   <span
@@ -13,13 +16,7 @@ const Dispo = (props) => (
         shieldColor='argent'
         frame='none'
         frameColor='sable'
-        dispo={props.dispo}
-        first='rond'
-        firstColor='sable'
-        second='rond'
-        secondColor='sable'
-        third='rond'
-        thirdColor='sable'
+        meubles={m(props.dispo)}
       />
   </span>
 );
@@ -32,14 +29,16 @@ export default class DispoPicker extends Picker {
         key={dis}
         dispo={dis}
         onClick={this.pick}
-        selected={dis === this.props.selected}
+        selected={this.state.expanded && dis === this.props.selected}
       />
     );
   }
 
   renderList() {
-    return getDispos().map(
-      (dispo) => (this.renderOne(dispo[0]))
+    const rem = this.props.dispos.filter((d) => d !== this.props.selected);
+    const left = getLeftDispos(rem);
+    return left.map(
+      (d) => (this.renderOne(d))
     );
   }
 }

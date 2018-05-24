@@ -32,7 +32,7 @@
 .overlay {
    position: fixed;
    overflow-y: scroll;
-   padding: 30px;
+   padding: 20px;
    margin: 10px;
    top: 10px; right: 10px; bottom: 10px; left: 10px; }
 
@@ -59,7 +59,7 @@
   background: transparent;
 }
 .shieldSelected {
-  border: 1px solid #bbb;
+  border: 2px solid #f00;
 }
 
 /* Grid

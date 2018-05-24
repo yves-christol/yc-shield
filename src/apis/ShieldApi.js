@@ -9,6 +9,9 @@ import PrivateRoute from '../auth/PrivateRoute.js';
 import Collection from './Collection.js';
 import ShieldBuilder from './ShieldBuilder.js';
 
+//swith to use prod or dev database
+const prodBase = false;
+
 // App component - represents the whole app
 export default class App extends Component {
   constructor(props) {
@@ -40,7 +43,11 @@ export default class App extends Component {
     if (user) {
       shield.email = user.email;
       shield.uid = user.uid;
-      fire.database().ref('/devshields').push( shield);
+      if (prod) {
+        fire.database().ref('/shields').push( shield);
+      } else {
+        fire.database().ref('/preshields').push( shield);
+      }
     }
   }
 
@@ -70,5 +77,4 @@ export default class App extends Component {
       </Router>
     );
   }
-
 }

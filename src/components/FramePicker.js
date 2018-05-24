@@ -13,13 +13,6 @@ const Frame =(props) => (
         shieldColor='argent'
         frame={props.frame}
         frameColor='sable'
-        dispo='unique'
-        first='none'
-        firstColor='sable'
-        second='none'
-        secondColor='sable'
-        third='none'
-        thirdColor='sable'
       />
   </span>
 );
@@ -32,7 +25,7 @@ export default class FramePicker extends Picker {
         key={fra}
         frame={fra}
         onClick={this.pick}
-        selected={fra === this.props.selected}
+        selected={this.state.expanded && fra === this.props.selected}
       />
     );
   }
