@@ -126,7 +126,11 @@ export function randomMeuble() {
 }
 
 export function getMeuble(name) {
-  return meubleMap.get(name).path;
+  const meu = meubleMap.get(name);
+  if (! meu) {
+    console.log(`Warning: ${name} is not a known meuble`);
+  }
+  return meu ? meu.path : '';
 }
 
 export function getMeubles() {

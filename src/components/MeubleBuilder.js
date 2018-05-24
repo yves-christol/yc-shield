@@ -53,9 +53,16 @@ export default class MeubleBuilder extends Component {
   }
 
   add(left) {
-    const meubles = this.props.meubles;
     if (left.length > 0) {
-      const m = {name: 'rond', color: 'sable', dispo: left[0]};
+      const meubles = this.props.meubles;
+      let n = 'delete';
+      let c = 'argent';
+      // use the last meuble name & color
+      if (meubles && meubles.length > 0) {
+        n = meubles[meubles.length - 1].name;
+        c = meubles[meubles.length - 1].color;
+      }
+      const m = {name: n, color: c, dispo: left[0]};
       meubles.push(m);
       this.props.action('meubles', meubles);
     }

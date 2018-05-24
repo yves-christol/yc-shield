@@ -30,13 +30,17 @@ export function randomColorBut(name) {
 export function getColor(name) {
   const col = colMap.get(name);
   if (! col) {
-    console.log(`Error: ${name} is not a known color`);
+    console.log(`Warning: ${name} is not a known color`);
   }
   return col ? col.value : 'sable';
 }
 
 export function getColorComp(name) {
-  return colMap.get(name).comp;
+  const col = colMap.get(name);
+  if (! col) {
+    console.log(`Warning: ${name} is not a known color`);
+  }
+  return col ? col.comp : 'argent';
 }
 
 export function getColors() {

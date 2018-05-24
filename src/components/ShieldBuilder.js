@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import FramePicker from './FramePicker.js';
 import ColorPicker from './ColorPicker.js';
 import MeubleBuilder from './MeubleBuilder.js';
-import DispoPicker from './DispoPicker.js';
 import Shield from './Shield.js';
 import RandomShield from './RandomShield.js';
 
@@ -16,7 +15,6 @@ export default class ShieldBuilder extends Component {
   }
 
   pick(attribute, value) {
-    console.log('tyty');
     this.setState({[attribute]: value});
   }
 
@@ -26,9 +24,6 @@ export default class ShieldBuilder extends Component {
   }
 
   render() {
-    console.log('shieldcolor '+this.state.shieldColor);
-    console.log('meubles '+this.state.meubles.length);
-
     return (
       <div className='row'>
         <div className='five columns'>
