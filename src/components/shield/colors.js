@@ -22,12 +22,24 @@ export function randomColor() {
   return colors[idx][0];
 }
 
-export function randomColorBut(name) {
-  const col = randomColor();
-  return col === name ? randomColorBut(name) : col;
+export function randomColorBut(names) {
+  let col = colors[0][0];
+  const dx = colors.length - names.length;
+  if (dx > 0) {
+    let idx = Math.floor(Math.random() * dx);
+    while (colors[idx][0] in names) {
+      idx += 1;
+      if (idx == colors.length) {
+        idx = 0;
+      }
+    }
+    col = colors[idx][0];
+  }
+  return col;
 }
 
 export function getColor(name) {
+  if (!name) return colors[0][0];
   const col = colMap.get(name);
   if (! col) {
     console.log(`Warning: ${name} is not a known color`);
@@ -36,6 +48,7 @@ export function getColor(name) {
 }
 
 export function getColorComp(name) {
+  if (!name) return colors[0][0];
   const col = colMap.get(name);
   if (! col) {
     console.log(`Warning: ${name} is not a known color`);

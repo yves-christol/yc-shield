@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-import FramePicker from './FramePicker.js';
+import PartitionPicker from './PartitionPicker.js';
+import PiecePicker from './PiecePicker.js';
 import ColorPicker from './ColorPicker.js';
 import MeubleBuilder from './MeubleBuilder.js';
 import Shield from './Shield.js';
@@ -29,8 +30,10 @@ export default class ShieldBuilder extends Component {
         <div className='five columns'>
             <Shield
               shieldColor={this.state.shieldColor}
-              frame={this.state.frame}
-              frameColor={this.state.frameColor}
+              partition={this.state.partition}
+              partitionColor={this.state.partitionColor}
+              piece={this.state.piece}
+              pieceColor={this.state.pieceColor}
               dispo={this.state.dispo}
               meubles={this.state.meubles}
             />
@@ -53,16 +56,29 @@ export default class ShieldBuilder extends Component {
             />
           </div>
           <div>
-            <p>Frame</p>
-            <FramePicker
-              selected={this.state.frame}
+            <p>Partition</p>
+            <PartitionPicker
+              selected={this.state.partition}
               action={this.pick}
-              attribute='frame'
+              attribute='partition'
             />
             <ColorPicker
-              selected={this.state.frameColor}
+              selected={this.state.partitionColor}
               action={this.pick}
-              attribute='frameColor'
+              attribute='partitionColor'
+            />
+          </div>
+          <div>
+            <p>Piece</p>
+            <PiecePicker
+              selected={this.state.piece}
+              action={this.pick}
+              attribute='piece'
+            />
+            <ColorPicker
+              selected={this.state.pieceColor}
+              action={this.pick}
+              attribute='pieceColor'
             />
           </div>
         </div>
