@@ -31,8 +31,10 @@ export default class Collection extends Component {
              <div className="two columns" key={i + idx} >
                <Shield
                  shieldColor={shield.value.shieldColor}
-                 frame={shield.value.frame}
-                 frameColor={shield.value.frameColor}
+                 partition={shield.value.partition}
+                 partitionColor={shield.value.partitionColor}
+                 piece={shield.value.piece}
+                 pieceColor={shield.value.pieceColor}
                  meubles={shield.value.meubles}
                />
              </div> )

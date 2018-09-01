@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import PartitionPicker from './PartitionPicker.js';
-import PiecePicker from './PiecePicker.js';
+import PiecePicker from './Picker.js';
 import ColorPicker from './ColorPicker.js';
 import MeubleBuilder from './MeubleBuilder.js';
 import Shield from './Shield.js';

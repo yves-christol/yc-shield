@@ -22,20 +22,24 @@ export function randomColor() {
   return colors[idx][0];
 }
 
-export function randomColorBut(names) {
-  let col = colors[0][0];
-  const dx = colors.length - names.length;
+export function randomColorBut(forbidden) {
+  let v = colors[0][0];
+  const dx = colors.length - forbidden.length;
   if (dx > 0) {
-    let idx = Math.floor(Math.random() * dx);
-    while (colors[idx][0] in names) {
-      idx += 1;
-      if (idx == colors.length) {
-        idx = 0;
+    let f = [];
+    for (let i = 0; i < forbidden.length; i++) {
+      f.push(getColor(forbidden[i]));
+    }
+    const rnd = Math.floor(Math.random() * dx);
+    let idx = rnd;
+    for (let i = 0; i <= idx; i++) {
+      if (f.includes(colors[i][1].value)) {
+        idx++;
       }
     }
-    col = colors[idx][0];
+    v = colors[idx][0];
   }
-  return col;
+  return v;
 }
 
 export function getColor(name) {
@@ -44,7 +48,7 @@ export function getColor(name) {
   if (! col) {
     console.log(`Warning: ${name} is not a known color`);
   }
-  return col ? col.value : 'sable';
+  return col ? col.value : colors[0][1].value;
 }
 
 export function getColorComp(name) {
@@ -53,7 +57,7 @@ export function getColorComp(name) {
   if (! col) {
     console.log(`Warning: ${name} is not a known color`);
   }
-  return col ? col.comp : 'argent';
+  return col ? col.comp : colors[0][1].comp;
 }
 
 export function getColors() {

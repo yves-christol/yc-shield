@@ -13,8 +13,10 @@ const Meuble = (props) => (
     >
       <Shield
         shieldColor='argent'
-        frame='none'
-        frameColor='sable'
+        partition='none'
+        partitionColor='sable'
+        piece='none'
+        pieceColor='sable'
         dispo='r1'
         meubles={m(props.meuble)}
     />

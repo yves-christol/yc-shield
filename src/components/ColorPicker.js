@@ -11,8 +11,10 @@ const Color = (props) => (
     >
       <Shield
         shieldColor={props.color}
-        frame='none'
-        frameColor='sable'
+        partition='none'
+        partitionColor='sable'
+        piece='none'
+        pieceColor='sable'
       />
   </span>
 );
