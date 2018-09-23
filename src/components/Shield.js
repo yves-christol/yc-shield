@@ -23,8 +23,15 @@ const Shield = (props) => (
         <stop stopColor='#6b6b6b' stopOpacity='0.12' offset='60%'/>
         <stop stopColor='#000' stopOpacity='0.12' offset='100%'/>
       </radialGradient>
+      <pattern id="shieldpattern" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse" >
+        <rect x="0" y="0" width="4" height="4" style={{fill: getColor(props.shieldColor)}} />
+        <circle cx="2" cy="2" r="1.5" style={{fill: getColor(props.shieldColor2), stroke: 'none'}} />
+      </pattern>
     </defs>
-    <path d={shield} style={{fill: getColor(props.shieldColor), strokeWidth: '0'}} />
+    {props.shieldColor2 ?
+      <path d={shield} style={{fill: '#shieldpattern', strokeWidth: '0'}} /> :
+      <path d={shield} style={{fill: getColor(props.shieldColor), strokeWidth: '0'}} />
+    }
     <path d={getPartition(props.partition)}  style={{fill: getColor(props.partitionColor)}} />
     <path d={getPiece(props.piece)}  style={{fill: getColor(props.pieceColor)}} />
     {props.meubles ? props.meubles.map((m) =>

@@ -32,7 +32,7 @@ export function randomPiece() {
 }
 
 export function getPiece(name) {
-  return name ? pieceMap.get(name).path : 'none';
+  return name ? pieceMap.get(name).path : '';
 }
 
 export function getPieces() {

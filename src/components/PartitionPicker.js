@@ -11,9 +11,6 @@ const Partition =(props) => (
     >
       <Shield
         shieldColor='argent'
-        partitionColor='sable'
-        piece='none'
-        pieceColor='sable'
         partition={props.partition}
       />
   </span>

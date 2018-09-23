@@ -11,9 +11,7 @@ const Piece =(props) => (
     >
       <Shield
         shieldColor='argent'
-        partition='none'
         piece={props.piece}
-        pieceColor='sable'
       />
   </span>
 );
@@ -24,7 +22,6 @@ export default class PiecePicker extends Picker {
     return (
       <Piece
         key={pie}
-        partition='none'
         piece={pie}
         onClick={this.pick}
         selected={this.state.expanded && pie === this.props.selected}

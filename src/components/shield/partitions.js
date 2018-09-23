@@ -24,7 +24,7 @@ export function randomPartition() {
 }
 
 export function getPartition(name) {
-  return name ? partitionMap.get(name).path : 'none';
+  return name ? partitionMap.get(name).path : '';
 }
 
 export function getPartitions() {
