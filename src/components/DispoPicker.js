@@ -14,8 +14,10 @@ const Dispo = (props) => (
     >
       <Shield
         shieldColor='argent'
-        frame='none'
-        frameColor='sable'
+        partition='none'
+        partitionColor='sable'
+        piece='none'
+        pieceColor='sable'
         meubles={m(props.dispo)}
       />
   </span>

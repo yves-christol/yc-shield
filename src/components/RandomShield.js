@@ -1,5 +1,6 @@
 import { randomColor, randomColorBut } from './shield/colors.js';
-import { randomFrame } from './shield/frames.js';
+import { randomPartition } from './shield/partitions.js';
+import { randomPiece } from './shield/pieces.js';
 import { randomDispo } from './shield/dispos.js';
 import { randomMeuble } from './shield/meubles.js';
 
@@ -20,10 +21,13 @@ function randomMeubles() {
 
 const RandomShield = () => {
   const shieldColor = randomColor();
+  const partitionColor = randomColorBut([shieldColor]);
   return {
        shieldColor: shieldColor,
-       frame: randomFrame(),
-       frameColor: randomColorBut(shieldColor),
+       partition: randomPartition(),
+       partitionColor: partitionColor,
+       piece: randomPiece(),
+       pieceColor: randomColorBut([shieldColor, partitionColor]),
        meubles: randomMeubles()
   };
 };

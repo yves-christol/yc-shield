@@ -40,7 +40,7 @@ export default class App extends Component {
     if (user) {
       shield.email = user.email;
       shield.uid = user.uid;
-      fire.database().ref('/devshields').push( shield);
+      fire.database().ref(fire.ycname).push(shield);
     }
   }
 

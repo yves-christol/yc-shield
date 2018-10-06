@@ -10,7 +10,8 @@ export default class Collection extends Component {
 
   componentWillMount(){
     /* Create reference to shields in Firebase Database */
-    let shieldList = fire.database().ref('/devshields').orderByKey().limitToLast(100);
+    let dbname = fire.ycname;
+    let shieldList = fire.database().ref(dbname).orderByKey().limitToLast(100);
     shieldList.on('child_added', snapshot => {
       /* Update React state when message is added at Firebase Database */
       let newShield = { value: snapshot.val(), id: snapshot.key };
@@ -30,8 +31,10 @@ export default class Collection extends Component {
              <div className="two columns" key={i + idx} >
                <Shield
                  shieldColor={shield.value.shieldColor}
-                 frame={shield.value.frame}
-                 frameColor={shield.value.frameColor}
+                 partition={shield.value.partition}
+                 partitionColor={shield.value.partitionColor}
+                 piece={shield.value.piece}
+                 pieceColor={shield.value.pieceColor}
                  meubles={shield.value.meubles}
                />
              </div> )
