@@ -1,7 +1,9 @@
 {
-  "extends": "google",
-  "rules": {
-    // Additional, per-project rules...
-  }
-}
+    "parserOptions": {
+        "ecmaVersion": 2017
+    },
 
+    "env": {
+        "es6": true
+    }
+}

@@ -43,12 +43,12 @@ export function randomColorBut(forbidden) {
 }
 
 export function getColor(name) {
-  if (!name) return colors[0][0];
   const col = colMap.get(name);
   if (! col) {
     console.log(`Warning: ${name} is not a known color`);
+    return colors[0][1].value;
   }
-  return col ? col.value : colors[0][1].value;
+  return col.value;
 }
 
 export function getColorComp(name) {

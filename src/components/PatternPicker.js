@@ -4,7 +4,7 @@ import Picker from './Picker.js';
 import Shield from './Shield.js';
 import { getColors } from './shield/colors.js';
 
-const Color = (props) => (
+const Pattern = (props) => (
   <span
     onClick={() => props.onClick(props.color)}
     className={props.selected ? 'shieldSelected' : 'shield'}

@@ -1,3 +1,16 @@
+/*
+<pattern id="pattern1" x="0" y="0" width="3" height="3" patternUnits="userSpaceOnUse" >
+  <rect x="0" y="0" width="3" height="3"
+style="fill: #f00" />
+  <circle cx="1.5" cy="1.5" r="1" style="stroke: none; fill: #0000ff" />
+</pattern>
+*/
+const patternString = (name) => (
+  "<pattern id='${name}' x='0' y='0' width='3' height='3' patternUnits='userSpaceOnUse' >" +
+  "<rect x='0' y='0' width='3' height='3' style='fill: #f00' />" +
+  ""
+)
+
 const patterns = [
  ['sable', {value: '#000000', comp: '#ffffff'}],
  ['argent', {value: '#ffffff', comp: '#000000'}],
