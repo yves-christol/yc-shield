@@ -23,7 +23,7 @@
     "deploy": "firebase deploy"
   },
   "devDependencies": {
-    "eslint": "^7.20.0",
+    "eslint": "^9.26.0",
     "eslint-config-google": "^0.14.0"
   },
   "browserslist": {
